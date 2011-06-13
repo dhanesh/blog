@@ -1,0 +1,12 @@
+<% title "Posts" %>
+  <% for post in @posts %>
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= post.content %></p>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_post_path(post) %>|
+        <%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+    <% end %>
+<% if user_signed_in? %>
+  <p><%= link_to "New Post", new_post_path %></p>
+<% end %>

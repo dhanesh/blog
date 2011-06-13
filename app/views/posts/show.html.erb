@@ -1,0 +1,10 @@
+<% title "Post" %>
+
+<h2><%= @post.title %></h2> by <%= @post.user.nil? ? 'unknown' : @post.user.email %>
+<p> <%= @post.content %></p>
+<% if user_signed_in? %>
+  <%= link_to "Edit", edit_post_path(@post) %> |
+  <%= link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete %> |
+<% end %>
+  <%= link_to "View All", posts_path %>
+</p>
