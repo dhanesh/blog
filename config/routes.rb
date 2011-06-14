@@ -1,7 +1,11 @@
 Blog::Application.routes.draw do
   resources :posts
 
-  devise_for :users
+  devise_for :users, :path => 'accounts'
+  
+  resources :users do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

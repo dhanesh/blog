@@ -1,6 +1,6 @@
 <% title "Posts" %>
   <% for post in @posts %>
-      <h2><%= link_to post.title, post %></h2>
+      <h3><%= link_to post.title, post %></h3>
       <p><%= post.content %></p>
       <% if user_signed_in? %>
         <%= link_to "Edit", edit_post_path(post) %>|

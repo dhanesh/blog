@@ -1,6 +1,6 @@
 <% title "Post" %>
 
-<h2><%= @post.title %></h2> by <%= @post.user.nil? ? 'unknown' : @post.user.email %>
+<h2><%= @post.title %></h2> by <%= @post.user.nil? ? 'unknown' : @post.user.user_name %>
 <p> <%= @post.content %></p>
 <% if user_signed_in? %>
   <%= link_to "Edit", edit_post_path(@post) %> |
